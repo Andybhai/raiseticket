@@ -1,0 +1,194 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="raiseticket.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+
+    <style type="text/css">
+        .auto-style1 {
+            width: 100%;
+        }
+
+        .header {
+            background-color: darkgray;
+            height: 80px;
+            text-align: center;
+        }
+
+        .leftbox {
+            width: 15%;
+            /*height: 500px;*/
+            height:auto;
+            background-color: gainsboro;
+        }
+
+        .rightbox {
+            width: 85%;
+            /*height: 500px;*/
+            height:auto;
+            background-color: #e6e7e8;
+            padding-left:30px;
+            padding-top:30px;
+            vertical-align:top;
+        }
+
+        .footer {
+            background-color: grey;
+            height: 50px;
+        }
+
+        .auto-style2 {
+            text-align: center;
+        }
+
+        .auto-style3 {
+            width: 550px;
+        }
+        
+        .auto-style5 {
+            width: 152px;
+        }
+        .auto-style6 {
+            width: 468px;
+        }
+        .auto-style7 {
+            color: #FFFFFF;
+        }
+        .auto-style8 {
+            text-align: center;
+            color: #000066;
+        }
+
+        .auto-style9 {
+            width: 895px;
+        }
+
+        </style>
+
+</head>
+
+
+<body>
+    <form id="form1" runat="server">
+
+        <table class="auto-style1">
+            <tr class="header">
+                <td colspan="2">
+
+                    <table class="auto-style1">
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td class="auto-style5">
+                                <asp:Image ID="Image1" ImageUrl="~/images/rbilogo3.jpg" Width="107px" runat="server"  />
+                            </td>
+                            <td class="auto-style6"><h1><h1 class="auto-style7">DIT Cell, Ahmedabad</h1></td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                    </table>
+
+                </td>
+            </tr>
+            <tr>
+                <td class="leftbox">
+            
+
+                    <table class="auto-style1">
+                        <tr>
+                            <td>
+                
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td class="auto-style2">
+
+                                <a href="<%= Page.ResolveUrl("~/Default.aspx") %>"<strong>Home</strong></a><strong><br />
+                                <br/>
+
+                        <a href="https://www.rbi.org.in">RBI Site</a><br />
+                                <br />
+                        <a href="https://ekp.rbi.org.in">EKP</a><br />
+                                <br />
+                        <a href="https://samadhan.rbi.org.in">Samadhan</a><br />
+                                <br />
+                        <a href="https://mail.rbi.org.in">Outlook Web Access</a><br />
+                                <br />
+                        <a href="https://ekuber.rbi.org.in">eKuber</a><br />
+                                <br />
+                        <a href="https://iccoms.rbi.org.in">ICCOMS</a><br />
+                                </strong>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td> <asp:Calendar ID="Calendar1" runat="server" BackColor="White" BorderColor="#3366CC" BorderWidth="1px" CellPadding="1" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="#003399" Height="200px" Width="220px">
+                                <DayHeaderStyle BackColor="#99CCCC" ForeColor="#336666" Height="1px" />
+                                <NextPrevStyle Font-Size="8pt" ForeColor="#CCCCFF" />
+                                <OtherMonthDayStyle ForeColor="#999999" />
+                                <SelectedDayStyle BackColor="#009999" Font-Bold="True" ForeColor="#CCFF99" />
+                                <SelectorStyle BackColor="#99CCCC" ForeColor="#336666" />
+                                <TitleStyle BackColor="#003399" BorderColor="#3366CC" BorderWidth="1px" Font-Bold="True" Font-Size="10pt" ForeColor="#CCCCFF" Height="25px" />
+                                <TodayDayStyle BackColor="#99CCCC" ForeColor="White" />
+                                <WeekendDayStyle BackColor="#CCCCFF" />
+                                </asp:Calendar> </td>
+                        </tr>
+                    </table>
+            
+
+                </td>
+                <td class="rightbox">
+                    <asp:ContentPlaceHolder ID="MainContentPlaceHolder" runat="server">
+
+                    </asp:ContentPlaceHolder>
+                    
+
+                </td>
+            </tr>
+            <tr class="footer">
+                <td colspan="2" style="align-content:flex-end;">
+                    <table class="auto-style1">
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td class="auto-style9">&nbsp;</td>
+                            <td class="auto-style3">
+                                <asp:Label ID="lblFooterIP" runat="server"></asp:Label>
+                            </td>
+                            <td class="auto-style8">DIT Cell Ahmedabad</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+
+    </form>
+</body>
+</html>
+
+

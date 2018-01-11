@@ -1,0 +1,49 @@
+﻿
+
+
+.cssGridView {width: 100%; background-color:#fff;  border:solid 1px #525252; border-collapse:collapse; }
+.cssGridView td{padding:7px; border:solid 1px #c1c1c1; color:#717171}
+.cssGridView th {padding: 4px 2px; color:#fff; background:#424242 repeat-x top;}
+.cssGridView th a{color:silver; text-decoration:none;}
+.cssGridView th a:hover{color:silver; text-decoration:underline;}
+.cssGridView .pgr table{margin:5px 0;}
+.cssGridView .pgr td{border-width:0; padding:0 6px; border-left:solid 1px #666;}
+.cssGridView .pgr a{color:#666; text-decoration:none;}
+.cssGridView .pgr a:hover{color:#000; text-decoration:underline;}
+
+.cssDetailsView {background-color: #fff; margin: 5px 0 10px 0; border: solid 1px #525252; border-collapse: collapse;}
+.cssDetailsView td{padding:10px; border:solid 1px #c1c1c1; color:#717171; text-align:left;}
+.cssDetailsView .header td {padding: 4px 2px; color:silver; background:#424242 repeat-x top; font-size:x-large;}
+.cssDetailsView .fieldheader {color:darkblue; width:150px; text-align:right}
+.cssDetailsView .command {background:#424242; line-height:20px;}
+.cssDetailsView .command td{text-align:center;}
+.cssDetailsView .command a{color:silver; text-decoration:none;}
+.cssDetailsView .command a:hover{color:silver; text-decoration:underline;}
+.cssDetailsView .edit {background-color:yellow;}
+.cssDetailsView .pager td{background-color:#424242; text-align:center;}
+.cssDetailsView .templatebutton{text-align:center; align-items:center}
+
+.GridPager a, .GridPager span {
+    display:marker;
+    height: 15px;
+    width: 15px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration:underline;
+}
+
+.GridPager a {
+    background-color: #00ff90;
+    color: #ff0000;
+    border: 1px solid #969696;
+}
+
+.GridPager span {
+    background-color: yellow;
+    color: #000;
+    border: 1px solid #3AC0F2;
+}
+
+
+
+
