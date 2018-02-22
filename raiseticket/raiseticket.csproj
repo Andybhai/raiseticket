@@ -16,7 +16,7 @@
     <RootNamespace>raiseticket</RootNamespace>
     <AssemblyName>raiseticket</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
-    <UseIISExpress>true</UseIISExpress>
+    <UseIISExpress>false</UseIISExpress>
     <Use64BitIISExpress />
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication>disabled</IISExpressAnonymousAuthentication>
@@ -129,6 +129,14 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="App_Data\calllog.accdb" />
+    <Content Include="App_Data\xml\depts.xml" />
+    <Content Include="App_Data\xml\problems.xml" />
+    <Content Include="App_Data\xml\team_member.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Data\xml\teams.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="images\prblmsolved.jpg" />
     <EmbeddedResource Include="images\rbilogo3.jpg" />
     <Content Include="Admin\callSheet.aspx" />
@@ -158,6 +166,7 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Login.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -230,6 +239,13 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
@@ -320,7 +336,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>49869</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:49869/</IISUrl>
+          <IISUrl>http://localhost/raiseticket</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

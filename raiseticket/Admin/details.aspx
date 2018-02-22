@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="details.aspx.cs" Inherits="raiseticket.WebForm3" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="details.aspx.cs" MaintainScrollPositionOnPostback="true" Inherits="raiseticket.WebForm3" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
     <link rel="stylesheet" href="../CSS/StyleSheet1.css" type="text/css" />
@@ -65,17 +65,9 @@
         PagerStyle-CssClass="pager"
         EditRowStyle-CssClass="edit" Width="506px" BackColor="White" Font-Bold="True" ForeColor="White" Wrap="False" OnItemUpdated="DetailsView1_ItemUpdated" OnItemUpdating="DetailsView1_ItemUpdating">
 
-
         <CommandRowStyle CssClass="command"></CommandRowStyle>
-
-
         <EditRowStyle CssClass="edit"></EditRowStyle>
-
-
-
         <FieldHeaderStyle CssClass="fieldheader"></FieldHeaderStyle>
-
-
 
         <Fields>
 
@@ -86,8 +78,9 @@
             <asp:BoundField DataField="callername" ReadOnly="True" HeaderText="Name of employee" SortExpression="callername" />
             <asp:BoundField DataField="extension" ReadOnly="True" HeaderText="Phone Ext" SortExpression="extension" />
             <asp:BoundField DataField="problem" ReadOnly="True" HeaderText="Problem reported" SortExpression="problem" />
+
             <asp:TemplateField HeaderText="Description" SortExpression="description">
-                <EditItemTemplate>
+               <EditItemTemplate>
                     <asp:Label ID="Label1" runat="server" Text='<%# Eval("description") %>'></asp:Label>
                 </EditItemTemplate>
                 <InsertItemTemplate>
@@ -97,6 +90,8 @@
                     <asp:Label ID="Label4" runat="server" Height="40px" Text='<%# Bind("description") %>' Width="330px"></asp:Label>
                 </ItemTemplate>
             </asp:TemplateField>
+
+
             <asp:TemplateField HeaderText="Solution provided" SortExpression="solution">
                 <EditItemTemplate>
                     <asp:TextBox ID="TextBox3" runat="server" Height="37px" Text='<%# Bind("solution") %>' Width="331px" Rows="3" TextMode="MultiLine"></asp:TextBox>
@@ -108,16 +103,22 @@
                     <asp:Label ID="Label3" runat="server" Height="37px" Text='<%# Bind("solution") %>' Width="330px"></asp:Label>
                 </ItemTemplate>
             </asp:TemplateField>
+
+
             <asp:TemplateField HeaderText="Team Name" SortExpression="team">
                 <EditItemTemplate>
-                    <asp:DropDownList ID="DropDownList1" runat="server" Height="22px" Width="130px"
-                        SelectedValue='<%# Bind("team") %>'>
+                    <%--<asp:DropDownList ID="DropDownList1" runat="server" Height="22px" Width="130px"
+                        SelectedValue='<%# Bind("team") %>' DataSourceID="XmlDataSource1">
                         <asp:ListItem>HCL</asp:ListItem>
                         <asp:ListItem>Silver Touch</asp:ListItem>
                         <asp:ListItem>Starminds</asp:ListItem>
                         <asp:ListItem></asp:ListItem>
-                    </asp:DropDownList>
+                    </asp:DropDownList>--%>
 
+                    <asp:DropDownList ID="DropDownList1" runat="server" Height="22px" Width="130px"
+                        DataSourceID="XmlDataSource1" DataTextField="team" DataValueField="team"  OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged" AutoPostBack="True" OnDataBound="DropDownList1_DataBound" OnTextChanged="DropDownList1_TextChanged">
+                    </asp:DropDownList>
+                    <asp:XmlDataSource ID="XmlDataSource1" runat="server" DataFile="~/App_Data/xml/teams.xml"></asp:XmlDataSource>
                 </EditItemTemplate>
                 <InsertItemTemplate>
                     <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("team") %>'></asp:TextBox>
@@ -126,9 +127,13 @@
                     <asp:Label ID="Label1" runat="server" Text='<%# Bind("team") %>' Height="19px" Width="330px"></asp:Label>
                 </ItemTemplate>
             </asp:TemplateField>
+
+
             <asp:TemplateField HeaderText="Name who attended" SortExpression="membername">
                 <EditItemTemplate>
-                    <asp:TextBox ID="TextBox2" runat="server" Height="19px" Text='<%# Bind("membername") %>' Width="200px"></asp:TextBox>
+                    <asp:DropDownList ID="DropDownList2" runat="server" Height="22px" Width="131px" OnLoad="DropDownList2_Load" DataSourceID="XmlDataSource2" DataTextField="team_member" DataValueField="team_member">
+                    </asp:DropDownList>
+                    <asp:XmlDataSource ID="XmlDataSource2" runat="server" DataFile="~/App_Data/xml/team_member.xml"></asp:XmlDataSource>
                 </EditItemTemplate>
                 <InsertItemTemplate>
                     <asp:TextBox ID="TextBox2" runat="server" Text='<%# Bind("membername") %>'></asp:TextBox>
@@ -137,32 +142,26 @@
                     <asp:Label ID="Label2" runat="server" Text='<%# Bind("membername") %>' Width="200px"></asp:Label>
                 </ItemTemplate>
             </asp:TemplateField>
+
             <asp:CheckBoxField DataField="closestatus" HeaderText="Status" SortExpression="closestatus" />
 
             <asp:CommandField ButtonType="Button" ControlStyle-Width="100px" DeleteText="" InsertText="" InsertVisible="False" ShowEditButton="True" ControlStyle-Height="35px" EditText="Close ticket" UpdateText="Save">
-
                 <ControlStyle Height="35px" Width="100px"></ControlStyle>
-
-
             </asp:CommandField>
 
             <asp:TemplateField ShowHeader="False" ItemStyle-HorizontalAlign="Center">
                 <ItemTemplate>
                     <asp:Button ID="btnBack" runat="server" CausesValidation="false" CommandName="" Height="29px" Text="Back" Width="76px" CssClass="templatebutton" OnClick="btnBack_Click" />
-
                 </ItemTemplate>
                 <ControlStyle CssClass="templatebutton" />
                 <FooterStyle HorizontalAlign="Center" />
                 <HeaderStyle HorizontalAlign="Center" />
-
                 <ItemStyle HorizontalAlign="Center"></ItemStyle>
             </asp:TemplateField>
 
         </Fields>
         <FooterStyle BackColor="#660033" ForeColor="White" />
-
         <HeaderStyle CssClass="header"></HeaderStyle>
-
         <PagerStyle ForeColor="#8C4510" HorizontalAlign="Center" />
         <RowStyle BackColor="#FFF7E7" ForeColor="#8C4510" />
     </asp:DetailsView>
