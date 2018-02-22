@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ahmedabadro>
+  <dept deptid="hrmd" deptname="HRMD"/>
+  <dept deptid="dit" deptname="DIT Cell"/>
+  <dept deptid="issue" deptname="Issue"/>
+  <dept deptid="estate" deptname="Estate"/>
+  <dept deptid="banking" deptname="Banking"/>
+</ahmedabadro>

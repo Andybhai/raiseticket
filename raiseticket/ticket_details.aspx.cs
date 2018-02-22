@@ -28,26 +28,26 @@ namespace raiseticket
 
                 using (OleDbConnection con = new OleDbConnection(CS))
                 {
-                    con.Open();
-                    OleDbCommand command = new OleDbCommand("select * from dept", con);
-                    OleDbDataReader reader = command.ExecuteReader();
-                    ddlDept.DataSource = reader;
-                    ddlDept.DataTextField = "dept";
-                    ddlDept.DataValueField = "dept";
-                    ddlDept.DataBind();
-                    reader.Close();
+                    //con.Open();
+                    //OleDbCommand command = new OleDbCommand("select * from dept", con);
+                    //OleDbDataReader reader = command.ExecuteReader();
+                    //ddlDept.DataSource = reader;
+                    //ddlDept.DataTextField = "dept";
+                    //ddlDept.DataValueField = "dept";
+                    //ddlDept.DataBind();
+                    //reader.Close();
 
 
                     System.Web.HttpContext context = System.Web.HttpContext.Current;
                     string ipaddress = Context.Request.ServerVariables["HTTP_X_FORWARDED_FOR"];
-                    
+
 
                     if (!string.IsNullOrEmpty(ipaddress))
                     {
                         string[] addresses = ipaddress.Split(',');
                         if (addresses.Length != 0)
                         {
-                            
+
                             //Response.Write("Client IP address is " + addresses[0]);
                         }
                     }
@@ -66,14 +66,16 @@ namespace raiseticket
 
             using (OleDbConnection con = new OleDbConnection(CS))
             {
-                con.Open();
-                OleDbCommand command = new OleDbCommand("select * from problem", con);
-                OleDbDataReader reader = command.ExecuteReader();
-                ddlProblem.DataSource = reader;
-                ddlProblem.DataTextField = "description";
-                ddlProblem.DataValueField = "description";
-                ddlProblem.DataBind();
-                reader.Close();
+                //con.Open();
+                //OleDbCommand command = new OleDbCommand("select * from problem", con);
+                //OleDbDataReader reader = command.ExecuteReader();
+                //ddlProblem.DataSource = reader;
+                //ddlProblem.DataTextField = "description";
+                //ddlProblem.DataValueField = "description";
+                //ddlProblem.DataBind();
+                //reader.Close();
+
+
             }
         }
 
@@ -140,7 +142,7 @@ namespace raiseticket
                     lblTktno.Text = "<h3>" + random + "</h3>";
                     lblDateTimeStamp.Text = "<h4>" + "On " + lblCallDate.Text + " at " + lblCallTime.Text + "</h4>";
 
-                    
+
                 }
                 else
                 {

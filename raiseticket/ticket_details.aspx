@@ -28,8 +28,9 @@
                             <br />
                         </td>
                         <td style="width: 397px; height: 53px;">
-                            <asp:DropDownList ID="ddlDept" runat="server" Height="25px" Width="127px">
+                            <asp:DropDownList ID="ddlDept" runat="server" Height="25px" Width="127px" DataSourceID="XmlDataSource1" DataTextField="deptname" DataValueField="deptname">
                             </asp:DropDownList>
+                            <asp:XmlDataSource ID="XmlDataSource1" runat="server" DataFile="~/App_Data/xml/depts.xml"></asp:XmlDataSource>
                         </td>
                         <td style="width: 136px; height: 53px;"></td>
                     </tr>
@@ -85,8 +86,9 @@
                             <br />
                         </td>
                         <td style="height: 82px;" colspan="2">
-                            <asp:DropDownList ID="ddlProblem" runat="server" Height="25px" Width="432px" style="margin-left: 3px">
+                            <asp:DropDownList ID="ddlProblem" runat="server" Height="25px" Width="432px" style="margin-left: 3px" DataSourceID="XmlDataSource2" DataTextField="desc" DataValueField="desc">
                             </asp:DropDownList>
+                            <asp:XmlDataSource ID="XmlDataSource2" runat="server" DataFile="~/App_Data/xml/problems.xml"></asp:XmlDataSource>
                         </td>
                     </tr>
                     <tr>

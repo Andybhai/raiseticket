@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<issueslist>
+  <ititems desc="PC -  not starting"/>
+  <ititems desc="PC - No display"/>
+  <ititems desc="PC - running slow"/>
+  <ititems desc="Printer - Unable to print despite issuing print orders"/>
+  <ititems desc="Printer - Paper jam"/>
+  <ititems desc="Printer - not responding"/>
+  <ititems desc="Intranet - Unable to open intranet sites - EKP, Samadhan"/>
+  <ititems desc="Internet - Unable to access internet sites"/>
+  <ititems desc="Internet - Unable to access specific sites - GFI error"/>
+  <ititems desc="Network - No network"/>
+  <ititems desc="Other problem / Unknown"/>
+  <ititems desc="Outlook - Not getting emails"/>
+  <ititems desc="Outlook - Password unlock"/>
+  <ititems desc="Outlook - Password reset"/>
+  <ititems desc="Outlook - PST issue"/>
+  <ititems desc="Outlook - Unable to send emails"/>
+</issueslist>
